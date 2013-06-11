@@ -1,0 +1,6 @@
+# Kevin's gitignore
+*.pyc
+settings.py
+
+# Pycharm stuff
+.idea/
