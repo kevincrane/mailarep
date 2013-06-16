@@ -4,3 +4,6 @@ settings.py
 
 # Pycharm stuff
 .idea/
+
+# Development Machine
+database.db
