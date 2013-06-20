@@ -18,7 +18,7 @@ proceeds will go to the charity of your choice!
 
 -----
 ### Notes:
-- This project was inspired by the recent NSA/PRISM leaks. My emails to my representatives and Obama felt ineffectual, and I wanted to make it easier to let my voice be heard through a more meaningful channel.
+- This project was inspired by the recent NSA/PRISM leaks. My emails to my representatives and the president felt ineffectual, and I wanted to make it easier to let my voice be heard through a more meaningful channel.
 - This is also doubling as a learning experience for me, teaching me:
   - Full-stack web development
   - Site design
