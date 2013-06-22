@@ -4,11 +4,10 @@
 ##################################################
 
 
-from PostalWSSimple_services_types import *
-import urlparse, types
-from ZSI.TCcompound import ComplexType, Struct
 from ZSI import client
-import ZSI
+
+from mailarep_site.postalmethods.postalmethods.PostalWSSimple_services_types import *
+
 
 # Locator
 class PostalWSSimpleLocator:

@@ -7,12 +7,12 @@ $ wsdl2py --url https://api.postalmethods.com/PostalWS.asmx?WSDL
 Detailed instructions available in the Python samples zip file
 """
 
-from postalmethods import client
+from mailarep_site.postalmethods.examples.postalmethods import client
 
-print 'Testing SendLetterAndAddressV2...'
-c = client.PmClient('USERNAME','PASSWORD',workMode="Default")
+print 'Testing SendLetterAndAddress...'
+c = client.PmClient('USERNAME','PASSWORD')
 filename = "SampleLetter.pdf"
-result = c.sendLetterAndAddressV2(filename,'SendLetterAndAddress Python Test',
+result = c.sendLetterAndAddress(filename,'SendLetterAndAddress Python Test',
                                 'c/o Frank Zappa',  # attionLine1
                                 'Accounting Dept.', # attentionLine2,
                                 'FZ Music Company', # company

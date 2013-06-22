@@ -7,7 +7,7 @@ $ wsdl2py --url https://api.postalmethods.com/PostalWS.asmx?WSDL
 Detailed instructions available in the Python samples zip file
 """
 
-from postalmethods import client
+from mailarep_site.postalmethods.examples.postalmethods import client
 
 print 'Testing GetLetterDetails...'
 c = client.PmClient('USERNAME','PASSWORD')

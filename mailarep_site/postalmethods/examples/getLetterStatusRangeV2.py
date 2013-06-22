@@ -1,21 +1,20 @@
 """
 Simple script to fetch the status of multiple letters at once using 
-the PostalMethods GetLetterStatus_Range SOAP API call.
+the PostalMethods GetLetterStatus_RangeV2 SOAP API call.
 You must set your SOAP client with a reference to 
 the PostalMethods Web Service: 
 $ wsdl2py --url https://api.postalmethods.com/PostalWS.asmx?WSDL 
 Detailed instructions available in the Python samples zip file
 """
+from mailarep_site.postalmethods.examples.postalmethods import client
 
-from postalmethods import client
-
-print 'Testing GetLetterStatusRange...'
+print 'Testing GetLetterStatusRangeV2...'
 c = client.PmClient('USERNAME','PASSWORD')
 
 minLetterId = 0000000 # Replace with a valid letter ID
 maxLetterId = 0000001 # Replace with a valid letter ID
 
-result = c.getLetterStatusRange(minLetterId,maxLetterId)
+result = c.getLetterStatusRangeV2(minLetterId,maxLetterId)
 print str(result)
 
 """

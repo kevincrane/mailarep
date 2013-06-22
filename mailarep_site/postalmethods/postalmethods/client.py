@@ -3,9 +3,11 @@ This module provides an API for accessing the PostalMethods web service.
 """
 
 # Import our generated service stub classes.
-from PostalWSSimple_services import *
 import os
+
+from mailarep_site.postalmethods.postalmethods.PostalWSSimple_services import *
 from util import deprecated
+
 
 SUCCESS = -3000
 

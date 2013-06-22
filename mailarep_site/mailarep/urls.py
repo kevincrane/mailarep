@@ -1,5 +1,5 @@
-from django.conf.urls import patterns, include, url
-from mailarep_app import views
+from django.conf.urls import patterns, url
+from mailarep_site.mailarep_app import views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
