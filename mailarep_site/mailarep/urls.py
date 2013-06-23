@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from mailarep_app import views
 
 # Uncomment the next two lines to enable the admin:
@@ -20,3 +21,6 @@ urlpatterns = patterns('',
 # Set the 404 View handler
 handler404 = views.no_page_404_view
 handler500 = views.server_error_500_view
+
+# TODO: static files in development
+urlpatterns += staticfiles_urlpatterns()

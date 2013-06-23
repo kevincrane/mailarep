@@ -1,10 +1,11 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
     """ Home page of the web site
     """
-    return HttpResponse("<!DOCTYPE HTML>\n<html><body><h1>Hello World!</h1></body></html>")
+    return render(request, 'index.html')
 
 
 # Custom view for a 404 error
