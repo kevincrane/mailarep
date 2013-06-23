@@ -7,7 +7,7 @@ TEMPLATE_DEBUG = DEBUG
 
 from unipath import Path
 
-PROJECT_PATH = Path(__file__).ancestor(2)   # os.path.dirname(os.path.abspath(__file__))
+PROJECT_PATH = Path(__file__).ancestor(3)   # os.path.dirname(os.path.abspath(__file__))
 LOGIN_URL = '/'
 
 ADMINS = (
@@ -19,7 +19,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': Path(PROJECT_PATH, 'database.db)'), # Or path to database file if using sqlite3.
+        'NAME': Path(PROJECT_PATH, 'database.db'), # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -30,7 +30,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['*']   #TODO: change this before production; use this for dev-settings
+ALLOWED_HOSTS = ['*']   # TODO: change this before production; use this for dev-settings
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -114,7 +114,6 @@ ROOT_URLCONF = 'mailarep.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'mailarep.wsgi.application'
 
-#TODO: update this as shown in 2Scoops book
 TEMPLATE_DIRS = PROJECT_PATH.child('templates')
 
 INSTALLED_APPS = (

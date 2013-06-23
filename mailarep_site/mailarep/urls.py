@@ -1,5 +1,5 @@
-from django.conf.urls import patterns, url
-from mailarep_site.mailarep_app import views
+from django.conf.urls import patterns, include, url
+from mailarep_app import views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -19,3 +19,4 @@ urlpatterns = patterns('',
 
 # Set the 404 View handler
 handler404 = views.no_page_404_view
+handler500 = views.server_error_500_view
