@@ -7,6 +7,17 @@ def index(request):
     """
     return render(request, 'index.html')
 
+def writeletter(request):
+    """ Form page to write a letter
+    """
+    return render(request, 'writeletter.html')
+
+
+def leaderboard(request):
+    """ Home page of the web site
+    """
+    return render(request, 'leaderboard.html')
+
 
 # Custom view for a 404 error
 #TODO: make views for both error types

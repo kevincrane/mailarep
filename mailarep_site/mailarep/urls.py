@@ -8,7 +8,9 @@ from mailarep_app import views
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$',          views.index,     name='index'),
+    url(r'^$',              views.index,     name='index'),
+    url(r'^writeletter/$',  views.writeletter,     name='writeletter'),
+    url(r'^leaderboard/$',  views.leaderboard,     name='leaderboard'),
     # url(r'^mailarep/', include('mailarep.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

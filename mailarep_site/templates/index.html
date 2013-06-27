@@ -2,48 +2,43 @@
 <html>
 <head>
     <title>Mail A Rep!</title>
-    {% load staticfiles %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" media="screen">
+{#    <link rel="stylesheet" href="https://app.divshot.com/themes/amelia/bootstrap.css">#}
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 </head>
 <body>
+    <!-- Collapsible Navbar -->
     <div class="navbar">
         <div class="navbar-inner">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="#">Mail A Rep</a>
+                <a class="brand" href="/">Mail A Rep</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li>
-                            <a href="#" class="active">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Leaderboard</a>
-                        </li>
-                        <li>
-                            <a href="#">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/writeletter">Write A Letter</a></li>
+                        <li><a href="/leaderboard">Leaderboard</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+
+
     <div class="hero-unit">
-        <h1>Mail A Rep
-            <br>
-        </h1>
-        <p>A tagline with a more in-depth description</p>
+        <h1>Mail A Rep</h1>
+        <p>Let your representatives know what you think!</p>
+        <p>The impact of a letter with the ease of an email.</p>
     </div>
 </body>
 </html>

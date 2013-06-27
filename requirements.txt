@@ -1,7 +1,6 @@
 Django==1.5.1
-PyXML==0.8.4
 South==0.8.1
 Unipath==1.0
-ZSI==2.0-rc3
 argparse==1.2.1
+django-debug-toolbar==0.9.4
 wsgiref==0.1.2
