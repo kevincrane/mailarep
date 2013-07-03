@@ -17,6 +17,13 @@
 
 <body>
   <!-- Collapsible Navbar -->
+{#TODO:  {% set navigation_bar = [#}
+{#      ('/', 'index', 'Index'),#}
+{#      ('/downloads/', 'downloads', 'Downloads'),#}
+{#      ('/about/', 'about', 'About')#}
+{#    ] -%}#}
+{#  {% set active_page = active_page|default('index') -%}#}
+
   <header class="navbar">
     <div class="navbar-inner">
       <div class="container-fluid">
@@ -41,6 +48,7 @@
 
   <div id="content">
     <div class="wrapper">
+{# TODO: somewhere to put errors/notices; flash class   #}
       {% block content %}
 
       {% endblock %}

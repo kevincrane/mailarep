@@ -67,9 +67,16 @@ class Sender(models.Model):
     phone_number = models.CharField(max_length=20, blank=True)
     email_address = models.EmailField(blank=True)
     # TODO: link to Charity
-    # TODO: link to Letter
     # TODO: link to Payment
 
     def __unicode__(self):
         return "%s from %s, %s" % (self.name, self.city, self.state)
 
+
+class Letter(models.Model):
+    """
+    Model to store actual letter written by constituent
+    """
+    letter_text = models.TextField()
+    date_sent = models.DateTimeField(auto_now=True, blank=True)
+    sender = models.ForeignKey(Sender)  # TODO: OneToOneField?

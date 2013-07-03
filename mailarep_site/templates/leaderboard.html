@@ -1,101 +1,75 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Mail A Rep!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="https://app.divshot.com/themes/amelia/bootstrap.css">
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-</head>
-<body>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="/">Mail A Rep</a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li><a href="/" class="active">Home</a></li>
-                        <li><a href="/leaderboard">Leaderboard</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/about">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+{% extends "base.html" %}
 
-    <!-- Most popular reps -->
-    <div class="span5 offset2">
-        <h3>Most Popular Representatives</h3>
-        <table class="table table-hover table-striped">
-            <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Representative</th>
-                <th># of Letters</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>Pres. Barack Obama</td>
-                <td>6000</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Sen. Joe Biden</td>
-                <td>2000</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Sen. Dianne Feinstein</td>
-                <td>200</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Gov. Rick Perry</td>
-                <td>4</td>
-            </tr>
-        </table>
-    </div>
+{% block title %}Leaderboard{% endblock %}
 
-    <!-- Most popular charities -->
-    <div class="span5 offset2">
-        <h3>Most Popular Charities</h3>
-        <table class="table table-hover table-striped">
-            <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Charity</th>
-                <th># of Donations</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>EFF</td>
-                <td>3421</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>ACLU</td>
-                <td>2000</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Red Cross</td>
-                <td>200</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>NRA</td>
-                <td>4</td>
-            </tr>
-        </table>
-    </div>
+{% block content %}
+<!-- Most popular reps -->
+<div class="span5 offset2">
+    <h3>Most Popular Representatives</h3>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Representative</th>
+            <th># of Letters</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Pres. Barack Obama</td>
+            <td>6000</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sen. Joe Biden</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sen. Dianne Feinstein</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Gov. Rick Perry</td>
+            <td>4</td>
+        </tr>
+    </table>
+</div>
 
-</body>
-</html>
+<!-- Most popular charities -->
+<div class="span5 offset2">
+    <h3>Most Popular Charities</h3>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Charity</th>
+            <th># of Donations</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>EFF</td>
+            <td>3421</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>ACLU</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Red Cross</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>NRA</td>
+            <td>4</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
