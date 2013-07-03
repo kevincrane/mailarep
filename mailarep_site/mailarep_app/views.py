@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from mailarep_app.forms import SenderModelForm
 
 
 def index(request):
@@ -10,7 +11,15 @@ def index(request):
 def writeletter(request):
     """ Form page to write a letter
     """
-    return render(request, 'writeletter.html')
+    if request.method == 'POST':
+        address_form = SenderModelForm(request.POST)
+        if address_form.is_valid():
+            #TODO: process; create new email; add to Models
+            return HttpResponseRedirect('/')
+    else:
+        address_form = SenderModelForm()
+
+    return render(request, 'writeletter.html', {'address-form': address_form})
 
 
 def leaderboard(request):

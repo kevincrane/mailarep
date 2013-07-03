@@ -1,43 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    {% load static %}
-    <title>Mail A Rep!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" media="screen">
-  {#    <link rel="stylesheet" href="https://app.divshot.com/themes/amelia/bootstrap.css">#}
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
-    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/style.less">
-    <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-    <script src="{{ STATIC_URL }}js/less.min.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
 
-  <!-- Collapsible Navbar -->
-  <div class="navbar">
-      <div class="navbar-inner">
-          <div class="container-fluid">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </a>
-              <a class="brand" href="/">Mail A Rep</a>
-              <div class="nav-collapse collapse">
-                  <ul class="nav">
-                      <li ><a href="/">Home</a></li>
-                      <li class="active"><a href="/writeletter">Write A Letter</a></li>
-                      <li><a href="/leaderboard">Leaderboard</a></li>
-                      <li><a href="/faq">FAQ</a></li>
-                      <li><a href="/about">About</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </div>
+{% block title %}Write Letter" {% endblock %}
 
+{% block content %}
+  {% load crispy_forms_tags %}
   <!-- Write a Letter Form -->
   <div class="container-fluid">
       <div class="row-fluid">
@@ -46,8 +12,8 @@
           </div>
           <div class="span10">
               <!-- Select a representative form -->
-              <form class="form-horizontal" id="formSelectRep">
-                  <legend>Select A Representative</legend>
+              <legend>Select A Representative</legend>
+              <form class="form-horizontal" id="formSelectRep" method="POST">
                   <input placeholder="Find Your Representative"
                          class="input-large" type="text">
                   <button class="btn btn-primary">Select Rep.</button> <!-- TODO: validate text box, select rep -->
@@ -61,119 +27,9 @@
               </form>
 
               <!--Address Form -->
-              <form class="form-horizontal">
-                <fieldset>
-                    <!-- Form Name -->
-                    <legend>Write A Letter</legend>
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="letterName">Name:</label>
-                        <div class="controls">
-                            <input id="letterName" name="letterName" placeholder="Sally Citizen" class="input-large"
-                                   required="" type="text">
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="letterStreet">Street Address:</label>
-                        <div class="controls">
-                            <input id="letterStreet" name="letterStreet" placeholder="123 State St."
-                                   class="input-large" required="" type="text">
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="letterCity">City:</label>
-                        <div class="controls">
-                            <input id="letterCity" name="letterCity" placeholder="Sunnyvale" class="input-large"
-                                   required="" type="text">
-                        </div>
-                    </div>
-                    <!-- Select Basic -->
-                    <div class="control-group">
-                        <label class="control-label" for="letterState">State:</label>
-                        <div class="controls">
-                            <select id="letterState" name="letterState" class="input-large">
-                                <option value="">Choose A State</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="letterZip">ZIP Code:</label>
-                        <div class="controls">
-                            <input id="letterZip" name="letterZip" placeholder="12345" class="input-small"
-                                   required="" type="text">
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="letterPhone">Phone Number (optional):</label>
-                        <div class="controls">
-                            <input id="letterPhone" name="letterPhone" placeholder="(123) 555-4567"
-                                   class="input-medium" type="text">
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="letterEmail">Email Address (optional):</label>
-                        <div class="controls">
-                            <input id="letterEmail" name="letterEmail" class="input-large" placeholder="test@example.com"
-                                   type="email">
-                        </div>
-                    </div>
-                </fieldset>
+              <form class="form-horizontal" id="sender-form" method="POST">
+                <legend>Write A Letter</legend>
+                {% crispy address-form address-form.helper %}
 
                 <!-- Write a letter -->
                 <legend>Write Your Letter</legend>
@@ -202,7 +58,4 @@
           </div>
       </div>
   </div>
-
-
-</body>
-</html>
+{% endblock %}
